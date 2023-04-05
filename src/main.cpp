@@ -11,10 +11,24 @@ using namespace std;
 
 int main (int argc, char *argv[]) {
     // error check usage
-    if (argc!=2) {
-		cout << "Usage: ./a.out graph_file" << endl;
-		return 1;
+    if (argc != 2) {
+        if (argc < 2 || argc > 3) {
+            cout << "Usage: ./a.out graph_file <optional: b or h>" << endl;
+            return 1;
+        } else if(!(argc == 3 && strcmp(argv[2], "h") == 0 || strcmp(argv[2], "b") == 0)) { // if argc == 3, check if b or h
+            cout << "Usage: ./a.out graph_file <optional: b or h>" << endl;
+            return 1;
+        }
 	}
+
+    //flags for brute force and heuristic, default set, clear other if one is indicated in command line
+    int bFlag, hFlag;
+    bFlag = hFlag = 1;
+
+    if(argc == 3) {
+        if(strcmp(argv[2], "b") == 0) hFlag = 0;
+        if(strcmp(argv[2], "h") == 0) bFlag = 0;
+    }
 
     // open file, error check
     fstream graphFile;
@@ -52,6 +66,14 @@ int main (int argc, char *argv[]) {
     
     // close file
     graphFile.close();
+
+    if(hFlag == 1) {
+        // call heuristic here
+    }
+
+    if(bFlag == 1) {
+        // call brute force here
+    }
 
     return 0;
 }

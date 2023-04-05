@@ -1,9 +1,8 @@
 #ifndef _HEURISTIC_H_
 #define _HEURISTIC_H_
 
-//#includes here
+#include <string>
 
-//std::vector<Shape*> *readFrom(std::string);
-//func defs here
+std::string heuristic(int *matrix[], const int V);
 
 #endif

@@ -1,9 +1,8 @@
 #ifndef _BRUTE_FORCE_H_
 #define _BRUTE_FORCE_H_
 
-//#includes here
+#include <string>
 
-//std::vector<Shape*> *readFrom(std::string);
-//func defs here
+std::string bruteForce(int *matrix[], const int V);
 
 #endif

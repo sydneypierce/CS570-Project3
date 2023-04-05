@@ -6,3 +6,8 @@
 
 using namespace std;
 
+string bruteForce(int *matrix[], const int V) {
+
+
+    return "No Hamiltonian path exists."
+}
