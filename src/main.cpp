@@ -15,7 +15,7 @@ int main (int argc, char *argv[]) {
         if (argc < 2 || argc > 3) {
             cout << "Usage: ./a.out graph_file <optional: b or h>" << endl;
             return 1;
-        } else if(!(argc == 3 && strcmp(argv[2], "h") == 0 || strcmp(argv[2], "b") == 0)) { // if argc == 3, check if b or h
+        } else if(!(argc == 3 && (strcmp(argv[2], "h") == 0 || strcmp(argv[2], "b")) == 0)) { // if argc == 3, check if b or h
             cout << "Usage: ./a.out graph_file <optional: b or h>" << endl;
             return 1;
         }
@@ -44,9 +44,19 @@ int main (int argc, char *argv[]) {
     getline(graphFile, currLine);
     V = stoi(currLine);
 
+    // create matrix
+    int **matrix = new int*[V];
+    for(int i = 0; i < V; i++) {
+        matrix[i] = new int[V];
+    }
+    // initialize with zeroes
+    for(int i = 0; i < V; i++) {
+        for(int j = 0; j < V; j++) {
+            matrix[i][j] = 0;
+        }
+    }
+
     // while have not reached '$', read from file and populate the adjacency matrix
-    int matrix[V][V];
-    memset(matrix, 0, sizeof(matrix));
     vector<int> spaceVec;
     int x, y;
     while(getline(graphFile, currLine)) {
@@ -55,7 +65,7 @@ int main (int argc, char *argv[]) {
         // remove carriage return to avoid parsing issues
         currLine.erase(remove(currLine.begin(), currLine.end(), '\r'), currLine.end());
 
-        //find positions of spaces, parse vertex numbers out of string and add edge to matrix (don't need weight)
+        // find positions of spaces, parse vertex numbers out of string and add edge to matrix (don't need weight)
         for(size_t i = 0; i < currLine.length(); i++) {
             if(currLine[i] == ' ') spaceVec.push_back(i);
         }
@@ -67,12 +77,19 @@ int main (int argc, char *argv[]) {
     // close file
     graphFile.close();
 
+    //call heuristic and/or brute force algorithms based on flags
+    string result;
+
     if(hFlag == 1) {
         // call heuristic here
+        result = heuristic(matrix, V);
+        cout << result << endl;
     }
 
     if(bFlag == 1) {
         // call brute force here
+        result = bruteForce(matrix, V);
+        cout << result << endl;
     }
 
     return 0;

@@ -3,6 +3,6 @@
 
 #include <string>
 
-std::string heuristic(int *matrix[], const int V);
+std::string heuristic(int **matrix, const int V);
 
 #endif
