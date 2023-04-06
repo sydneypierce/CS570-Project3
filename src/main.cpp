@@ -58,7 +58,7 @@ int main (int argc, char *argv[]) {
 
     // while have not reached '$', read from file and populate the adjacency matrix
     vector<int> spaceVec;
-    int x, y;
+    int x, y, z;
     while(getline(graphFile, currLine)) {
         if(currLine.find("$") != string::npos) break;
 
@@ -70,16 +70,29 @@ int main (int argc, char *argv[]) {
             if(currLine[i] == ' ') spaceVec.push_back(i);
         }
         x = stoi(currLine.substr(0, spaceVec.at(0)));
-        y = stoi(currLine.substr(spaceVec.at(0) + 1, spaceVec.at(1)));
-        matrix[x-1][y-1] = 1;
+        y = stoi(currLine.substr(spaceVec.at(0) + 1, (spaceVec.at(1) - spaceVec.at(0) - 1)));
+        z = stoi(currLine.substr(spaceVec.at(1) + 1));
+
+        // if the value is 0 -> assign it as z
+        // else, check if z is less than the current value
+        if(matrix[x-1][y-1] == 0) {
+            matrix[x-1][y-1] = z;
+        } else if(z < matrix[x-1][y-1]) {
+            matrix[x-1][y-1] = z;
+        } 
     }
-    
-    // close file
     graphFile.close();
+
+    for(int i = 0; i < V; i++) {
+        for(int j = 0; j < V; j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
 
     //call heuristic and/or brute force algorithms based on flags
     string result;
-
+    vector<int> res;
     if(hFlag == 1) {
         // call heuristic here
         result = heuristic(matrix, V);
@@ -88,8 +101,13 @@ int main (int argc, char *argv[]) {
 
     if(bFlag == 1) {
         // call brute force here
-        result = bruteForce(matrix, V);
-        cout << result << endl;
+        //result = bruteForce(matrix, V);
+        //cout << result << endl;
+        res = bruteForce(matrix, V);
+        for(auto x : res) {
+            cout << x << "->";
+        }
+        cout << endl;
     }
 
     return 0;

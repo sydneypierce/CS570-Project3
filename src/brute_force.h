@@ -3,9 +3,11 @@
 
 #include <string>
 #include <iostream>
+#include <vector>
 
 bool DFS(int **matrix, int traversed[], int vertex, int numTraversed, int V);
 
-std::string bruteForce(int **matrix, const int V);
+//std::string bruteForce(int **matrix, const int V);
+std::vector<int> bruteForce(int **matrix, const int V);
 
 #endif
