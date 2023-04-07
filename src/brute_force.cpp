@@ -17,11 +17,11 @@ bool DFS(int **matrix, int traversed[], int vertex, int numTraversed, int V) {
     } 
 
     for(int i = 0; i < V; i++) {
-        cout << "it " << i << endl << "\t";
-        for(int i = 0; i < V; i++) {cout << traversed[i] << " ";}
-        cout << endl;
+        //cout << "it " << i << endl << "\t";
+        //for(int i = 0; i < V; i++) {cout << traversed[i] << " ";}
+        //cout << endl;
         if(matrix[vertex][i] >= 1 && traversed[i] == 0) {
-            cout << "\t\tPath btwn " << vertex << "&" << i << " exists. Trying DFS." << endl; 
+            //cout << "\t\tPath btwn " << vertex << "&" << i << " exists. Trying DFS." << endl; 
             traversed[i] = 1;
             if(DFS(matrix, traversed, i, numTraversed + 1, V) == true) {
                 order.push_back(vertex + 1);
@@ -41,8 +41,8 @@ vector<int> bruteForce(int **matrix, const int V) {
 
     for(int i = 0; i < V; i++) {
         traversed[i] = 1;
-        cout << "Calling DFS from BF starting at vertex " << i << endl;
-        if(DFS(matrix, traversed, i, 1, V) == true) {hamPaths.push_back(order); cout << "\t\t\t\tHAM PATH!!!!" << endl;}
+        //cout << "Calling DFS from BF starting at vertex " << i << endl;
+        if(DFS(matrix, traversed, i, 1, V) == true) {hamPaths.push_back(order); /*cout << "\t\t\t\tHAM PATH!!!!" << endl;*/}
         order.clear();
         traversed[i] = 0;
     }
@@ -50,6 +50,7 @@ vector<int> bruteForce(int **matrix, const int V) {
     int weight;
     int min = INT_MAX;
     vector<int> minVec;
+    cout << hamPaths.size() << endl;
     for(auto v : hamPaths) {
         weight = 0;
         for(int i = V-1; i > 0; i--) {

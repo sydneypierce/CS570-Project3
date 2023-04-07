@@ -3,7 +3,7 @@
 
 #include "Edge.h"
 #include "Graph.h"
-#include <cstring>
+#include <climits>
 #include <iostream>
 #include <vector>
 
