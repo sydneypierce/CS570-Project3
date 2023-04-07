@@ -101,11 +101,10 @@ int main (int argc, char *argv[]) {
 
     if(bFlag == 1) {
         // call brute force here
-        //result = bruteForce(matrix, V);
-        //cout << result << endl;
+        //returns backwards vec, print switched
         res = bruteForce(matrix, V);
-        for(auto x : res) {
-            cout << x << "->";
+        for(int i = res.size() - 1; i >= 0; i--) {
+            cout << res.at(i) << "->";
         }
         cout << endl;
     }

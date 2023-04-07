@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <vector>
+#include <climits>
 
 bool DFS(int **matrix, int traversed[], int vertex, int numTraversed, int V);
 
