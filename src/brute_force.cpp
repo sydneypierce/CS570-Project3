@@ -17,7 +17,11 @@ bool DFS(int **matrix, int traversed[], int vertex, int numTraversed, int V) {
     } 
 
     for(int i = 0; i < V; i++) {
+        cout << "it " << i << endl << "\t";
+        for(int i = 0; i < V; i++) {cout << traversed[i] << " ";}
+        cout << endl;
         if(matrix[vertex][i] >= 1 && traversed[i] == 0) {
+            cout << "\t\tPath btwn " << vertex << "&" << i << " exists. Trying DFS." << endl; 
             traversed[i] = 1;
             if(DFS(matrix, traversed, i, numTraversed + 1, V) == true) {
                 order.push_back(vertex + 1);
@@ -37,7 +41,8 @@ vector<int> bruteForce(int **matrix, const int V) {
 
     for(int i = 0; i < V; i++) {
         traversed[i] = 1;
-        if(DFS(matrix, traversed, i, 1, V) == true) hamPaths.push_back(order);
+        cout << "Calling DFS from BF starting at vertex " << i << endl;
+        if(DFS(matrix, traversed, i, 1, V) == true) {hamPaths.push_back(order); cout << "\t\t\t\tHAM PATH!!!!" << endl;}
         order.clear();
         traversed[i] = 0;
     }
@@ -57,3 +62,20 @@ vector<int> bruteForce(int **matrix, const int V) {
     }
     return minVec;
 }
+
+/*
+def hamiltonians(G, vis = []):
+    if not vis:
+        for n in G:
+            for p in hamiltonians(G, [n]):
+                yield p
+    else:
+        dests = set(G[vis[-1]]) - set(vis)
+        if not dests and len(vis) == len(G):
+            yield vis
+        for n in dests:
+            for p in hamiltonians(G, vis + [n]):
+                yield p
+G = {'a' : 'bc', 'b' : 'ad', 'c' : 'b', 'd' : 'ac'}
+print(list(hamiltonians(G)))
+*/
