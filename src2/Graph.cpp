@@ -5,15 +5,13 @@ using namespace std;
 Graph::Graph(vector<Edge> &edges, int **mtx, int n)
 {
     // populate matrix
-    matrix.resize(n + 1);
-    for(int i = 0; i < n + 1; i++) {matrix[0].push_back(i);}
-    for(int i = 1; i < n + 1; i++) {
-        matrix[i].resize(n + 1);
-        matrix[i][0] = i;   // makes first col = row #
-        for(int j = 1; j < n + 1; j++) {
-            matrix[i][j] = mtx[i-1][j-1];
+    matrix.resize(n);
+    for(int i = 0; i < n; i++) {
+        matrix[i].resize(n);
+        for(int j = 0; j < n; j++) {
+            matrix[i][j] = mtx[i][j];
         }
-    }  
+    }
 
     // resize the vector to hold `n` elements of type `vector<int>`
     adjList.resize(n);

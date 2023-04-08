@@ -3,11 +3,10 @@
 
 #include "Edge.h"
 #include "Graph.h"
+#include <algorithm>
 #include <climits>
 #include <iostream>
 #include <vector>
-
-int checkPath(int **mtx);
 
 void heuristic(Graph &graph, int V);
 
