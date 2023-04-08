@@ -11,9 +11,10 @@ public:
     // a vector of vectors to represent an adjacency list
     std::vector<std::vector<int>> adjList;
     std::vector<std::vector<int>> weightList;
+    std::vector<std::vector<int>> matrix;
  
     // Constructor
-    Graph(std::vector<Edge> &edges, int n);
+    Graph(std::vector<Edge> &edges, int **mtx, int n);
 
 };
 

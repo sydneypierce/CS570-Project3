@@ -1,6 +1,7 @@
 #include "BruteForce.h"
 #include "Edge.h"
 #include "Graph.h"
+#include "Heuristic.h"
 
 #include <algorithm>
 #include <cstring>
@@ -45,7 +46,19 @@ int main (int argc, char *argv[]) {
     getline(graphFile, currLine);
     V = stoi(currLine);
 
-    // while have not reached '$', read from file and populate the adjacency matrix
+    //adjacency matrix
+    int **matrix = new int*[V];
+    for(int i = 0; i < V; i++) {
+        matrix[i] = new int[V];
+    }
+    // initialize with zeroes
+    for(int i = 0; i < V; i++) {
+        for(int j = 0; j < V; j++) {
+            matrix[i][j] = 0;
+        }
+    }
+
+    // while have not reached '$', read from file and populate the edge vector & matrix
     vector<int> spaceVec;
     vector<Edge> edges;
     int x, y, z;
@@ -63,24 +76,23 @@ int main (int argc, char *argv[]) {
         y = stoi(currLine.substr(spaceVec.at(0) + 1, (spaceVec.at(1) - spaceVec.at(0) - 1)));
         z = stoi(currLine.substr(spaceVec.at(1) + 1));
 
+        if(matrix[x-1][y-1] == 0) {
+            matrix[x-1][y-1] = z;
+        } else if(z < matrix[x-1][y-1]) {
+            matrix[x-1][y-1] = z;
+        } 
         edges.push_back({x-1, y-1, z});
     }
     graphFile.close();
 
-    Graph g(edges, V);
+    Graph g(edges, matrix, V);
     
-
     //call heuristic and/or brute force algorithms based on flags
     string result;
     vector<int> res;
-    if(hFlag == 1) {
-        // call heuristic here
-    }
+    if(hFlag == 1) heuristic(g, V);
 
-    if(bFlag == 1) {
-        // call brute force here
-        bruteForce(g, V);
-    }
+    if(bFlag == 1) bruteForce(g, V);
 
     return 0;
 }
