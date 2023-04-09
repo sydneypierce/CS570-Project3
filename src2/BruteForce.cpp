@@ -78,5 +78,5 @@ void bruteForce(Graph &graph, int V)
     for(auto i : minVec) {
         cout << i + 1 << " ";
     }
-    cout << endl;
+    cout << "with weight: " << min << endl;
 }

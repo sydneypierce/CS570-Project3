@@ -7,9 +7,10 @@ void heuristic(Graph &graph, int V) {
     int minPathWeight = 99999999;
     vector<int> minPath;
     vector<int> path;
+    int weight;
 
     for(int i = 0; i < V; i++) {    // start at all vertices once
-        int weight = 0;
+        weight = 0;
         path.clear();
         path.push_back(i);
 
@@ -37,10 +38,10 @@ void heuristic(Graph &graph, int V) {
     if(minPath.size() == 0) {
         cout << "The heuristic either fails for this graph or there is no Hamiltonian path." << endl;
     } else {
-       cout << "Heuristic solution: ";
+       cout << "Heuristic solution:   ";
         for(auto v : minPath) {
             cout << v + 1 << " ";
         }
-        cout << endl; 
+        cout << "with weight: " << minPathWeight << endl; 
     }
 }
