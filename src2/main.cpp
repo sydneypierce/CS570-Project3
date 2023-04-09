@@ -64,6 +64,7 @@ int main (int argc, char *argv[]) {
     int x, y, z;
     while(getline(graphFile, currLine)) {
         if(currLine.find("$") != string::npos) break;
+        spaceVec.clear();
 
         // remove carriage return to avoid parsing issues
         currLine.erase(remove(currLine.begin(), currLine.end(), '\r'), currLine.end());
