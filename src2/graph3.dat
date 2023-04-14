@@ -1,3 +1,4 @@
+Hamiltonian Path
 4
 1 3 1
 1 2 1
@@ -6,4 +7,6 @@
 4 1 1
 4 3 1
 $
-does not work for heuristic, not sure why
+snpierce
+    The heuristic either fails for this graph or there is no Hamiltonian path.
+    Brute Force Solution: 4 1 3 2 with weight: 3
