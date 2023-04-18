@@ -40,8 +40,11 @@ int main (int argc, char *argv[]) {
         return 1;
     }
 
-    // get first line (# vertices)
+    // get first line (name)
     string currLine;
+    getline(graphFile, currLine);
+
+    // get second line (# vertices)
     int V = 0;
     getline(graphFile, currLine);
     V = stoi(currLine);
