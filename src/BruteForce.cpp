@@ -1,5 +1,7 @@
 #include "BruteForce.h"
 
+#include <chrono>
+
 using namespace std;
 
 vector<vector<int>> hamPaths;
@@ -35,6 +37,15 @@ void DFS(Graph &graph, int vertex, vector<bool> &visited, vector<int> &path, int
  
 void bruteForce(Graph &graph, int V)
 {
+
+
+
+    using namespace std::chrono;
+
+    auto ht1 = high_resolution_clock::now();
+    
+
+
     // start with every node
     for (int start = 0; start < V; start++)
     {
@@ -48,13 +59,14 @@ void bruteForce(Graph &graph, int V)
  
         DFS(graph, start, visited, path, V);
     }
+
+
+    auto ht2 = high_resolution_clock::now();
+    auto duration = duration_cast<microseconds>(ht2 - ht1);
+    cout << "b time: " << duration.count() << endl;
+
+
     
-    /*for(auto i : hamPaths) {
-        for(auto j : i) {
-            cout << j << " ";
-        }
-        cout << endl;
-    }*/
     int weight, weightIdx;
     int min = INT_MAX;
     vector<int> minVec;

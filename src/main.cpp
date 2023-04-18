@@ -92,10 +92,9 @@ int main (int argc, char *argv[]) {
     Graph g(edges, matrix, V);
     
     //call heuristic and/or brute force algorithms based on flags
-    string result;
-    vector<int> res;
+    //string result;
+    //vector<int> res;
     if(hFlag == 1) heuristic(g, V);
-
     if(bFlag == 1) bruteForce(g, V);
 
     return 0;
