@@ -1,5 +1,7 @@
-#include "brute_force.h"
-#include "heuristic.h"
+#include "BruteForce.h"
+#include "Edge.h"
+#include "Graph.h"
+#include "Heuristic.h"
 
 #include <algorithm>
 #include <cstring>
@@ -44,7 +46,7 @@ int main (int argc, char *argv[]) {
     getline(graphFile, currLine);
     V = stoi(currLine);
 
-    // create matrix
+    //adjacency matrix
     int **matrix = new int*[V];
     for(int i = 0; i < V; i++) {
         matrix[i] = new int[V];
@@ -56,11 +58,13 @@ int main (int argc, char *argv[]) {
         }
     }
 
-    // while have not reached '$', read from file and populate the adjacency matrix
+    // while have not reached '$', read from file and populate the edge vector & matrix
     vector<int> spaceVec;
+    vector<Edge> edges;
     int x, y, z;
     while(getline(graphFile, currLine)) {
         if(currLine.find("$") != string::npos) break;
+        spaceVec.clear();
 
         // remove carriage return to avoid parsing issues
         currLine.erase(remove(currLine.begin(), currLine.end(), '\r'), currLine.end());
@@ -73,41 +77,23 @@ int main (int argc, char *argv[]) {
         y = stoi(currLine.substr(spaceVec.at(0) + 1, (spaceVec.at(1) - spaceVec.at(0) - 1)));
         z = stoi(currLine.substr(spaceVec.at(1) + 1));
 
-        // if the value is 0 -> assign it as z
-        // else, check if z is less than the current value
         if(matrix[x-1][y-1] == 0) {
             matrix[x-1][y-1] = z;
         } else if(z < matrix[x-1][y-1]) {
             matrix[x-1][y-1] = z;
         } 
+        edges.push_back({x-1, y-1, z});
     }
     graphFile.close();
 
-    for(int i = 0; i < V; i++) {
-        for(int j = 0; j < V; j++) {
-            cout << matrix[i][j] << " ";
-        }
-        cout << endl;
-    }
-
+    Graph g(edges, matrix, V);
+    
     //call heuristic and/or brute force algorithms based on flags
     string result;
     vector<int> res;
-    if(hFlag == 1) {
-        // call heuristic here
-        result = heuristic(matrix, V);
-        cout << result << endl;
-    }
+    if(hFlag == 1) heuristic(g, V);
 
-    if(bFlag == 1) {
-        // call brute force here
-        //returns backwards vec, print switched
-        res = bruteForce(matrix, V);
-        for(int i = res.size() - 1; i >= 0; i--) {
-            cout << res.at(i) << "->";
-        }
-        cout << endl;
-    }
+    if(bFlag == 1) bruteForce(g, V);
 
     return 0;
 }

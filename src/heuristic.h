@@ -1,8 +1,13 @@
 #ifndef _HEURISTIC_H_
 #define _HEURISTIC_H_
 
-#include <string>
+#include "Edge.h"
+#include "Graph.h"
+#include <algorithm>
+#include <climits>
+#include <iostream>
+#include <vector>
 
-std::string heuristic(int **matrix, const int V);
+void heuristic(Graph &graph, int V);
 
 #endif
