@@ -1,7 +1,15 @@
 #include "Graph.h"
 
 using namespace std;
- 
+
+/**
+* Constructor for a Graph instance.
+* 
+* @param    edges   vector of edges in the graph
+* @param    mtx     adjacency matrix representing the graph
+* @param    n       the number of vertices/nodes in the graph
+* @see      Edge
+*/ 
 Graph::Graph(vector<Edge> &edges, int **mtx, int n)
 {
     // populate matrix

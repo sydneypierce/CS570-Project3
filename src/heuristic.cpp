@@ -4,6 +4,15 @@
 
 using namespace std;
 
+/**
+* Find shortest Hamiltonian path a graph.
+* Heuristic algorithm based on nearest neighbor for TSP, does not always find "best" answer.
+* 
+* @param    graph   a Graph to run the algorithm on
+* @param    V       the number of vertices/nodes in the graph
+* @return   void 
+* @see      Graph
+*/
 void heuristic(Graph &graph, int V) {
     auto m = graph.matrix;
     int minPathWeight = 99999999;
@@ -11,13 +20,9 @@ void heuristic(Graph &graph, int V) {
     vector<int> path;
     int weight;
 
-
-
-    using namespace std::chrono;
-    auto ht1 = high_resolution_clock::now();
+    //using namespace std::chrono;
+    //auto ht1 = high_resolution_clock::now();
     
-    
-
     for(int i = 0; i < V; i++) {    // start at all vertices once
         weight = 0;
         path.clear();
@@ -44,13 +49,9 @@ void heuristic(Graph &graph, int V) {
         }
     }
 
-
-    
-    auto ht2 = high_resolution_clock::now();
-    auto duration = duration_cast<microseconds>(ht2 - ht1);
-    cout << "h time: " << duration.count() << endl;
-
-
+    //auto ht2 = high_resolution_clock::now();
+    //auto duration = duration_cast<microseconds>(ht2 - ht1);
+    //cout << "h time: " << duration.count() << endl;
 
     if(minPath.size() == 0) {
         cout << "The heuristic either fails for this graph or there is no Hamiltonian path." << endl;

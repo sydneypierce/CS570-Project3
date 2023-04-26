@@ -1,3 +1,9 @@
+/*
+* Author: Sydney Pierce (CWID: 12052443)
+* CS 570 Spring 2023
+* Project 3
+*/
+
 #include "BruteForce.h"
 #include "Edge.h"
 #include "Graph.h"
@@ -17,13 +23,13 @@ int main (int argc, char *argv[]) {
         if (argc < 2 || argc > 3) {
             cout << "Usage: ./a.out graph_file <optional: b or h>" << endl;
             return 1;
-        } else if(!(argc == 3 && (strcmp(argv[2], "h") == 0 || strcmp(argv[2], "b")) == 0)) { // if argc == 3, check if b or h
+        } else if(!(strcmp(argv[2], "h") == 0 || strcmp(argv[2], "b") == 0)) { // if argc == 3, check if b or h
             cout << "Usage: ./a.out graph_file <optional: b or h>" << endl;
             return 1;
         }
 	}
 
-    //flags for brute force and heuristic, default set, clear other if one is indicated in command line
+    // flags for brute force and heuristic, default = set
     int bFlag, hFlag;
     bFlag = hFlag = 1;
 
@@ -54,7 +60,7 @@ int main (int argc, char *argv[]) {
     for(int i = 0; i < V; i++) {
         matrix[i] = new int[V];
     }
-    // initialize with zeroes
+    // initialize adjacency matrix with zeroes
     for(int i = 0; i < V; i++) {
         for(int j = 0; j < V; j++) {
             matrix[i][j] = 0;
@@ -92,8 +98,6 @@ int main (int argc, char *argv[]) {
     Graph g(edges, matrix, V);
     
     //call heuristic and/or brute force algorithms based on flags
-    //string result;
-    //vector<int> res;
     if(hFlag == 1) heuristic(g, V);
     if(bFlag == 1) bruteForce(g, V);
 
