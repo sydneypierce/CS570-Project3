@@ -64,6 +64,8 @@ int main (int argc, char *argv[]) {
         // write weight as negative
         longToHamFile << -stoi(currLine.substr(spaceVec.at(1) + 1)) << endl;
     }
+    longToHamFile << "$" << endl;
+    
     graphFile.close();
     longToHamFile.close();
 

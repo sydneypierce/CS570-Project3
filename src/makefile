@@ -6,7 +6,7 @@ OBJECTS = main.o BruteForce.o Edge.o Graph.o Heuristic.o
 TO = hamPathToTSP.o BruteForce.o Edge.o Graph.o Heuristic.o
 FROM = longestToHam.o BruteForce.o Edge.o Graph.o Heuristic.o
 
-make: $(OBJECTS)
+make run: $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJECTS)
 
 to: $(TO)
