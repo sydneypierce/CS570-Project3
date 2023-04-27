@@ -7,20 +7,20 @@ C++ 11 or greater
 
 
 # Heuristic and Brute Force Algorithms (main.cpp, Heuristic.cpp, BruteForce.cpp)
-This project implements both a brute force and a heuristic algorithms for a Hamiltonian path on a provided graph. These algorithms perform an NP-Hard implementation of the Hamiltonian path problem that attempts to find the **shortest** Hamiltonian path. It takes as input a file representing a graph, transforms this into a user-defined graph stucture, and outputs the result of the brute force and heuristic solutions.
-The heuristic algorithm is based on the nearest neighbor heuristic for the travelling salesman problem. This idea was adapted to fit the implementation of a shortest Hamiltonian path. The nearest neighbor heuristic is an approximation algorithm, meaning that it does NOT guarantee an optimal solution.
+This project implements both a brute force and a heuristic algorithms for a Hamiltonian path on a provided graph. These algorithms perform an NP-Hard implementation of the Hamiltonian path problem that attempts to find the **shortest** Hamiltonian path. It takes as input a file representing a graph, transforms this into a user-defined graph stucture, and outputs the result of the brute force and heuristic solutions.  
+The heuristic algorithm is based on the nearest neighbor heuristic for the travelling salesman problem. This idea was adapted to fit the implementation of a shortest Hamiltonian path. The nearest neighbor heuristic is an approximation algorithm, meaning that it does NOT guarantee an optimal solution.  
 The brute force algorithm takes a dynamic programming approach, and runs a depth first search algorithm starting from every node. This algorithm checks all possible paths, so as long as the path exists and the graph is not too large, it will find an optimal solution.
 
 ## Usage
-To compile the files necessary to run the heuristic and brute force algorithms, run `make run`.
-To run **both** the heuristic and brute force algorithms, run `./a.out graph_file`.
-To run the *heuristic only*, run `./a.out graph_file h`.
-To run the *brute force only*, run `./a.out graph_file b`.
+To compile the files necessary to run the heuristic and brute force algorithms, run `make run`.  
+To run **both** the heuristic and brute force algorithms, run `./a.out graph_file`.  
+To run the *heuristic only*, run `./a.out graph_file h`.  
+To run the *brute force only*, run `./a.out graph_file b`.  
 To remove the a.out executable and any .o files, run `make clean`.
 
 
 ## Features
-Execution of a heuristic and/or brute force algorithm on a given graph.
+Execution of a heuristic and/or brute force algorithm on a given graph.  
 Displays both the path chosen and the weight of this path.
 
 ## Conclusion
@@ -31,8 +31,8 @@ This project provides a comparison of a heuristic and brute force algorithm for 
 This project takes as input a file representing a graph for a longest path problem, and then transforms the graph by the mapping process described in **report.pdf**. It outputs this tranformed graph into a separate file named **longToHam.dat**; it does NOT change the input file. When this new file is given as input to **main.cpp**, it will result in the answer to the longest path problem for the original graph. (The answer shown will be negative; the actual answer is the absoulte value of the output.) This demonstrates a mapping from longest path to Hamiltonian path.
 
 ## Usage
-To compile the files necessary to run the longest path to Hamiltonian path mapping algorithm, run `make from`.
-To run the algorithm, run `./a.out graph_file`.
+To compile the files necessary to run the longest path to Hamiltonian path mapping algorithm, run `make from`.  
+To run the algorithm, run `./a.out graph_file`.  
 To remove the a.out executable and any .o files, run `make clean`.
 
 
@@ -47,9 +47,9 @@ This project provides a mapping from the longest path problem to the shortest pa
 This project takes as input a file representing a graph for a Hamiltonian path problem, and then transoforms the graph by the mapping process described in **report.pdf**. It outputs this tranformed graph into a separate file named **lhamToTSP.dat**; it does NOT change the input file. When this new file is given as input to a travelling salesman algorithm, it will result in the answer to the Hamiltonian path problem for the original graph.
 
 ## Usage
-To compile the files necessary to run the longest path to Hamiltonian path mapping algorithm, run `make to`.
-To run the algorithm, run `./a.out graph_file`.
-To remove the a.out executable and any .o files, run `make clean`.
+To compile the files necessary to run the longest path to Hamiltonian path mapping algorithm, run `make to`.  
+To run the algorithm, run `./a.out graph_file`.  
+To remove the a.out executable and any .o files, run `make clean`.  
 
 
 ## Features
