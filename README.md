@@ -15,7 +15,7 @@ Created By: Sydney Pierce
       </ul>
     </li>
     <li>
-      <a href="#longest">Longest Path to Shortest Hamiltonian Path Mapping Algorithm</a>
+      <a href="#Longest-Path-to-Shortest-Hamiltonian-Path-Mapping-Algorithm">Longest Path to Shortest Hamiltonian Path Mapping Algorithm</a>
       <ul>
         <li><a href="#usage2">Usage</a></li>
         <li><a href="#features2">Usage</a></li>
@@ -23,7 +23,7 @@ Created By: Sydney Pierce
       </ul>
     </li>
     <li>
-      <a href="#tsp">Shortest Hamiltonian Path to Travelling Salesman Problem Mapping Algorithm</a>
+      <a href="#Shortest-Hamiltonian-Path-to-Travelling-Salesman-Problem-Mapping-Algorithm">Shortest Hamiltonian Path to Travelling Salesman Problem Mapping Algorithm</a>
       <ul>
         <li><a href="#usage2">Usage</a></li>
         <li><a href="#features2">Usage</a></li>
@@ -63,7 +63,8 @@ This project provides a comparison of a heuristic and brute force algorithm for 
 
 
 <!-- LONGEST -->
-# Longest Path to Shortest Hamiltonian Path Mapping Algorithm (longestToHam.cpp)
+# Longest Path to Shortest Hamiltonian Path Mapping Algorithm
+(longestToHam.cpp)
 This project takes as input a file representing a graph for a longest path problem, and then transforms the graph by the mapping process described in **report.pdf**. It outputs this tranformed graph into a separate file named **longToHam.dat**; it does NOT change the input file. When this new file is given as input to **main.cpp**, it will result in the answer to the longest path problem for the original graph. (The answer shown will be negative; the actual answer is the absoulte value of the output.) This demonstrates a mapping from longest path to Hamiltonian path.
 
 <!-- USAGE2 -->
@@ -82,7 +83,8 @@ This project provides a mapping from the longest path problem to the shortest pa
 
 
 <!-- TSP -->
-# Shortest Hamiltonian Path to Travelling Salesman Problem Mapping Algorithm (hamToTSP.cpp)
+# Shortest Hamiltonian Path to Travelling Salesman Problem Mapping Algorithm
+(hamToTSP.cpp)
 This project takes as input a file representing a graph for a Hamiltonian path problem, and then transoforms the graph by the mapping process described in **report.pdf**. It outputs this tranformed graph into a separate file named **lhamToTSP.dat**; it does NOT change the input file. When this new file is given as input to a travelling salesman algorithm, it will result in the answer to the Hamiltonian path problem for the original graph.
 
 <!-- USAGE3 -->
