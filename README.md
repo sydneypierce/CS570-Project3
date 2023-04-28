@@ -9,25 +9,25 @@ Created By: Sydney Pierce
     <li>
       <a href="#Heuristic-and-Brute-Force-Algorithms">Heuristic and Brute Force Algorithms</a>
       <ul>
-        <li><a href="#usage1">Usage</a></li>
-        <li><a href="#features1">Features</a></li>
-        <li><a href="#conclusion1">Conclusion</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
       </ul>
     </li>
     <li>
       <a href="#Longest-Path-to-Shortest-Hamiltonian-Path-Mapping-Algorithm">Longest Path to Shortest Hamiltonian Path Mapping Algorithm</a>
       <ul>
-        <li><a href="#usage2">Usage</a></li>
-        <li><a href="#features2">Features</a></li>
-        <li><a href="#conclusion2">Conclusion</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
       </ul>
     </li>
     <li>
       <a href="#Shortest-Hamiltonian-Path-to-Travelling-Salesman-Problem-Mapping-Algorithm">Shortest Hamiltonian Path to Travelling Salesman Problem Mapping Algorithm</a>
       <ul>
-        <li><a href="#usage2">Usage</a></li>
-        <li><a href="#features2">Features</a></li>
-        <li><a href="#conclusion2">Conclusion</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
       </ul>
     </li>
   </ol>
