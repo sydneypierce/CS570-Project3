@@ -7,7 +7,7 @@ Created By: Sydney Pierce
   <ol>
     <li><a href="#requirements">Requirements</a></li>
     <li>
-      <a href="#heuristic-and-brute-force">Heuristic and Brute Force Algorithms</a>
+      <a href="#Heuristic-and-Brute-Force-Algorithms">Heuristic and Brute Force Algorithms</a>
       <ul>
         <li><a href="#usage1">Usage</a></li>
         <li><a href="#features1">Usage</a></li>
@@ -38,7 +38,8 @@ Created By: Sydney Pierce
 C++ 11 or greater
 
 <!-- HEURISTIC AND BRUTE FORCE -->
-# Heuristic and Brute Force Algorithms (main.cpp, Heuristic.cpp, BruteForce.cpp)
+# Heuristic and Brute Force Algorithms
+(main.cpp, Heuristic.cpp, BruteForce.cpp)
 This project implements both a brute force and a heuristic algorithms for a Hamiltonian path on a provided graph. These algorithms perform an NP-Hard implementation of the Hamiltonian path problem that attempts to find the **shortest** Hamiltonian path. It takes as input a file representing a graph, transforms this into a user-defined graph stucture, and outputs the result of the brute force and heuristic solutions.  
 The heuristic algorithm is based on the nearest neighbor heuristic for the travelling salesman problem. This idea was adapted to fit the implementation of a shortest Hamiltonian path. The nearest neighbor heuristic is an approximation algorithm, meaning that it does NOT guarantee an optimal solution.  
 The brute force algorithm takes a dynamic programming approach, and runs a depth first search algorithm starting from every node. This algorithm checks all possible paths, so as long as the path exists and the graph is not too large, it will find an optimal solution.
