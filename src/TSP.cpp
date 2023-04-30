@@ -10,7 +10,7 @@
 using namespace std;
 
 // N is the number of cities/Node given
-#define N 65
+#define N 5
 #define INF INT_MAX
 
 // Structure to store all the necessary information
@@ -226,7 +226,7 @@ int solve(int CostGraphMatrix[N][N])
 			min->path.push_back(make_pair(i, 0));
 			
 			// Print list of cities visited
-			//TSPPAthPrint(min->path);
+			TSPPAthPrint(min->path);
 			
 			// Return optimal cost
 			return min->cost;
