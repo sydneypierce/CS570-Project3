@@ -112,20 +112,26 @@ This project provides a mapping from the shortest path optimization of the Hamil
 
 <!-- GRAPHS -->
 # Graphs
-Pictures of the graphs can be seen in the imgs folder.  
 ## Graph1
 Graph 1 is a simple, directed graph with 10 nodes. Both my heuristic and brute force get the same weight for this graph, although they come up with different paths because algorithms traverse the graphs in different orders.  
-![G1](/imgs/Graph1.PNG?raw=true "G1")
-![G1 Cert](/imgs/Graph1_cert.PNG?raw=true "G1 Cert")
+
+![G1](/imgs/Graph1.PNG?raw=true "G1")  
+![G1 Cert](/imgs/Graph1_cert.PNG?raw=true "G1 Cert")  
 
 ## Graph2
+Graph 2 is a directed graph with 6 nodes. My heuristic does not get the optimal answer for this graph, but it is only off by 1. This is expected, as the nearest neighbor heuristic is not guaranteed to get the "correct" answer every time.  
 
-![G2](/imgs/Graph2.PNG?raw=true "G2")
+![G2](/imgs/Graph2.PNG?raw=true "G2")  
+![G2 Cert](/imgs/Graph2_cert.PNG?raw=true "G2 Cert")  
 
 ## Graph3
+Graph 3 is a small directed graph. My heuristic does not work *at all* on this one.  
 
-![G3](/imgs/Graph3.PNG?raw=true "G3")
+![G3](/imgs/Graph3.PNG?raw=true "G3")  
+![G3 Cert](/imgs/Graph3_cert.PNG?raw=true "G3 Cert")  
 
 ## Graph4
+Graph 4 is a large graph with 64 nodes and 126 edges. My heuristic generates the optimal answer, but my brute force cannot find any answer within a reasonable amount of time.  
 
-![G4](/imgs/Graph4.PNG?raw=true "G4")
+![G4](/imgs/Graph4.PNG?raw=true "G4")  
+![G4 Cert](/imgs/Graph4_cert.PNG?raw=true "G4 Cert")  
