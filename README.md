@@ -115,10 +115,17 @@ This project provides a mapping from the shortest path optimization of the Hamil
 Pictures of the graphs can be seen in the imgs folder.  
 ## Graph1
 Graph 1 is a simple, directed graph with 10 nodes. Both my heuristic and brute force get the same weight for this graph, although they come up with different paths because algorithms traverse the graphs in different orders.  
-![Alt text](/imgs/Graph1_cert.PNG?raw=true "Optional Title")
+![G1](/imgs/Graph1.PNG?raw=true "G1")
+![G1 Cert](/imgs/Graph1_cert.PNG?raw=true "G1 Cert")
 
 ## Graph2
 
+![G2](/imgs/Graph2.PNG?raw=true "G2")
+
 ## Graph3
 
+![G3](/imgs/Graph3.PNG?raw=true "G3")
+
 ## Graph4
+
+![G4](/imgs/Graph4.PNG?raw=true "G4")
