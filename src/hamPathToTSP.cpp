@@ -47,7 +47,7 @@ int main (int argc, char *argv[]) {
     // while have not reached '$', read from in file and write to out file
     while(getline(graphFile, currLine)) {
         if(currLine.find("$") != string::npos) break;
-        tspFile << currLine;
+        tspFile << currLine << "\n";
     }
     graphFile.close();
 

@@ -2,6 +2,7 @@
 * Code taken from https://www.geeksforgeeks.org/traveling-salesman-problem-tsp-implementation/
 * for the purpose of verifying my mapping.
 * Define V as the # of nodes, then input the graph created by my mapping into the matrix.
+* Edited the main function to parse my mapped graph file, hamPathToTSP.dat.
 */
 
 // C++ code to implement the approach
@@ -9,7 +10,7 @@
 using namespace std;
 
 // N is the number of cities/Node given
-#define N 7
+#define N 65
 #define INF INT_MAX
 
 // Structure to store all the necessary information
@@ -225,7 +226,7 @@ int solve(int CostGraphMatrix[N][N])
 			min->path.push_back(make_pair(i, 0));
 			
 			// Print list of cities visited
-			TSPPAthPrint(min->path);
+			//TSPPAthPrint(min->path);
 			
 			// Return optimal cost
 			return min->cost;
@@ -262,15 +263,60 @@ int solve(int CostGraphMatrix[N][N])
 // Driver code
 int main()
 {
-	int CostGraphMatrix[N][N] ={{INF, INF, 3, INF, 2, 7, 1},
+	/*int CostGraphMatrix[N][N] ={{INF, INF, 3, INF, 2, 7, 1},
                                 {INF, INF, INF, INF, 4, 4, 1},
                                 {3, INF, INF, 2, 1, INF, 1},
                                 {INF, INF, 2, INF, INF, INF, 1},
                                 {2, 4, 1, INF, INF, 3, 1},
                                 {7, 4, INF, INF, 3, INF, 1},
-                                {1, 1, 1, 1, 1, 1, INF}};
+                                {1, 1, 1, 1, 1, 1, INF}};*/
+	
+	// open file, error check
+    fstream graphFile;
+    graphFile.open("hamPathToTSP.dat");
+
+    // get first line (name)
+    string currLine;
+    getline(graphFile, currLine);
+
+    // get second line (# vertices)
+    int V = 0;
+    getline(graphFile, currLine);
+    V = stoi(currLine);
+
+    //adjacency matrix
+    int matrix[N][N];
+
+    // initialize adjacency matrix with zeroes
+    for(int i = 0; i < V; i++) {
+        for(int j = 0; j < V; j++) {
+            matrix[i][j] = INF;
+        }
+    }
+
+    // while have not reached '$', read from file and populate the edge vector & matrix
+    vector<int> spaceVec;
+    int x, y, z;
+    while(getline(graphFile, currLine)) {
+        if(currLine.find("$") != string::npos) break;
+        spaceVec.clear();
+
+        // remove carriage return to avoid parsing issues
+        currLine.erase(remove(currLine.begin(), currLine.end(), '\r'), currLine.end());
+
+        // find positions of spaces, parse vertex numbers out of string and add edge to matrix (don't need weight)
+        for(size_t i = 0; i < currLine.length(); i++) {
+            if(currLine[i] == ' ') spaceVec.push_back(i);
+        }
+        x = stoi(currLine.substr(0, spaceVec.at(0)));
+        y = stoi(currLine.substr(spaceVec.at(0) + 1, (spaceVec.at(1) - spaceVec.at(0) - 1)));
+        z = stoi(currLine.substr(spaceVec.at(1) + 1));
+
+        matrix[x-1][y-1] = z;
+    }
+    graphFile.close();
 
 	// Function call
-	cout << solve(CostGraphMatrix);
+	cout << solve(matrix);
 	return 0;
 }
