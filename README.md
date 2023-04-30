@@ -30,6 +30,15 @@ Created By: Sydney Pierce
         <li><a href="#conclusion-3">Conclusion</a></li>
       </ul>
     </li>
+    <li>
+      <a href="#Graphs">Graphs</a>
+      <ul>
+        <li><a href="#graph1">Graph1</a></li>
+        <li><a href="#graph2">Graph2</a></li>
+        <li><a href="#graph3">Graph3</a></li>
+        <li><a href="#graph4">Graph4</a></li>
+      </ul>
+    </li>
   </ol>
 </details>
 
@@ -100,3 +109,16 @@ Creates a new .dat file with the input graph data altered by the mapping algorit
 <!-- CONCLUSION3 -->
 ## Conclusion 3
 This project provides a mapping from the shortest path optimization of the Hamiltonian path problem to the travelling salesman problem. 
+
+<!-- GRAPHS -->
+# Graphs
+Pictures of the graphs can be seen in the imgs folder.  
+## Graph1
+Graph 1 is a simple, directed graph with 10 nodes. Both my heuristic and brute force get the same weight for this graph, although they come up with different paths because algorithms traverse the graphs in different orders.
+<img src="/imgs/Graph1_cert.png" alt="Graph1 Certificate">
+
+## Graph2
+
+## Graph3
+
+## Graph4
