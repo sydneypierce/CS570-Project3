@@ -1,7 +1,7 @@
 /**
 * Code taken from https://www.geeksforgeeks.org/traveling-salesman-problem-tsp-implementation/
 * for the purpose of verifying my mapping.
-* Define V as the # of nodes, then input the graph created by my mapping into the matrix.
+* Define N as the # of nodes, then input the graph created by my mapping into the matrix.
 * Edited the main function to parse my mapped graph file, hamPathToTSP.dat.
 */
 
