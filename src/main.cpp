@@ -3,7 +3,6 @@
 * CS 570 Spring 2023
 * Project 3
 */
-
 #include "BruteForce.h"
 #include "Edge.h"
 #include "Graph.h"

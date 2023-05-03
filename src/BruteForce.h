@@ -1,3 +1,8 @@
+/*
+* Author: Sydney Pierce (CWID: 12052443)
+* CS 570 Spring 2023
+* Project 3
+*/
 #ifndef _BRUTE_FORCE_H_
 #define _BRUTE_FORCE_H_
 

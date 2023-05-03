@@ -1,3 +1,8 @@
+/*
+* Author: Sydney Pierce (CWID: 12052443)
+* CS 570 Spring 2023
+* Project 3
+*/
 #ifndef _GRAPH_H_
 #define _GRAPH_H_
 
