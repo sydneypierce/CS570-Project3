@@ -6,6 +6,7 @@ Created By: Sydney Pierce
   <summary>Table of Contents</summary>
   <ol>
     <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#rHamiltonian-Path-Problem">Hamiltonian Path Problem</a></li>
     <li>
       <a href="#Heuristic-and-Brute-Force-Algorithms">Heuristic and Brute Force Algorithms</a>
       <ul>
@@ -46,6 +47,9 @@ Created By: Sydney Pierce
 ## Requirements
 C++ 11 or greater
 
+## Hamiltonian Path Problem
+The Hamiltonian path problem consists of finding a path through a graph that visits each node *exactly once*. To make this decision problem into an optimization problem, I decided to try to find the *shortest* Hamiltonian path in a given graph.
+
 <!-- HEURISTIC AND BRUTE FORCE -->
 # Heuristic and Brute Force Algorithms
 (main.cpp, Heuristic.cpp, BruteForce.cpp)
@@ -80,6 +84,7 @@ This project takes as input a file representing a graph for a longest path probl
 ## Usage 2
 To compile the files necessary to run the longest path to Hamiltonian path mapping algorithm, run `make from`.  
 To run the algorithm, run `./a.out graph_file`.  
+To test the new graph, run `make run` then `./a.out longToHam.dat`.  
 To remove the a.out executable and any .o files, run `make clean`.
 
 <!-- FEATURES2 -->
@@ -100,6 +105,7 @@ This project takes as input a file representing a graph for a Hamiltonian path p
 ## Usage 3
 To compile the files necessary to run the longest path to Hamiltonian path mapping algorithm, run `make to`.  
 To run the algorithm, run `./a.out graph_file`.  
+This file can be run on a travelling salesman algorithm to answer the Hamiltonian path problem.
 To remove the a.out executable and any .o files, run `make clean`.  
 
 <!-- FEATURES3 -->
